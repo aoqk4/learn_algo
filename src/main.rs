@@ -272,3 +272,40 @@ mod q_11399 {
         println!("{_result}");
     }
 }
+
+// 2023.02.15 백준 Greedy 16953문 제출 정답
+mod q_16953 {
+    use std::io::stdin;
+
+    fn q_16953() {
+        let mut line = String::new();
+        stdin().read_line(&mut line).expect("wrong io");
+
+        let numbers: Vec<usize> = line
+            .split_whitespace()
+            .map(|num| num.parse::<usize>().unwrap())
+            .collect();
+
+        let a = numbers[0_usize];
+        let mut b = numbers[1_usize];
+
+        let mut cnt: usize = 1;
+
+        loop {
+            if a == b {
+                println!("{cnt}");
+                break;
+            } else if a != b {
+                if b % 10 == 1 {
+                    b /= 10;
+                } else if b % 2 == 0 && b != 0 {
+                    b /= 2;
+                } else {
+                    println!("-1");
+                    break;
+                }
+            }
+            cnt += 1;
+        }
+    }
+}

@@ -309,3 +309,41 @@ mod q_16953 {
         }
     }
 }
+
+// 2023.02.16 백준 Greedy 15903문 제출 정답
+mod q_15903 {
+    use std::io::stdin;
+
+    fn q_15903() {
+        let mut line = String::new();
+        stdin().read_line(&mut line).expect("wrong io");
+
+        let numbers: Vec<usize> = line
+            .split_whitespace()
+            .map(|num| num.parse::<usize>().unwrap())
+            .collect();
+
+        let n: usize = numbers[0_usize];
+        let m: usize = numbers[1_usize];
+
+        let mut line = String::new();
+        stdin().read_line(&mut line).expect("wrong io");
+
+        let mut card: Vec<usize> = line
+            .split_whitespace()
+            .map(|num| num.parse::<usize>().unwrap())
+            .collect();
+
+        for _i in 0..m {
+            card.sort();
+
+            let card_sum = card[0] + card[1];
+
+            card[0] = card_sum;
+
+            card[1] = card_sum;
+        }
+
+        println!("{}", card.iter().sum::<usize>());
+    }
+}

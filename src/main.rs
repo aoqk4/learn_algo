@@ -347,3 +347,52 @@ mod q_15903 {
         println!("{}", card.iter().sum::<usize>());
     }
 }
+
+// 2023.02.17 백준 backtrack 10974문 제출 정답
+// 시간 초과 --> 출력 방식과 parameter 관련 고려해 볼 것.
+mod q_10974 {
+    use std::io::stdin;
+    use std::io::{stdout, Write};
+
+    fn q_10974() {
+        let mut line = String::new();
+        stdin().read_line(&mut line).expect("wrong io");
+
+        let numbers: Vec<i64> = line
+            .split_whitespace()
+            .map(|num| num.parse::<i64>().unwrap())
+            .collect();
+
+        let n: usize = numbers[0_usize].try_into().unwrap();
+
+        let ans: Vec<usize> = vec![0; 9];
+
+        let visited: Vec<bool> = vec![false; 9];
+
+        permutation(0, ans, n, visited);
+    }
+
+    fn permutation(cnt: usize, mut ans: Vec<usize>, n: usize, mut visited: Vec<bool>) {
+        if cnt == n {
+            let stdout = stdout();
+            let mut lock = stdout.lock();
+
+            for i in 0..cnt {
+                write!(lock, "{} ", ans[i].clone()).unwrap();
+            }
+            writeln!(lock, "").unwrap();
+            return;
+        } else if cnt != n {
+            for i in 1..n + 1 {
+                if visited[i] == true {
+                    continue;
+                } else {
+                    visited[i] = true;
+                    ans[cnt] = i;
+                    permutation(cnt + 1, ans.clone(), n, visited.clone());
+                    visited[i] = false;
+                }
+            }
+        }
+    }
+}

@@ -3,7 +3,7 @@ use std::io::stdin;
 fn q_3040() {
     let mut target_arr: Vec<usize> = vec![];
 
-    for i in 0..9 {
+    for _ in 0..9 {
         let mut line = String::new();
         stdin().read_line(&mut line).expect("wrong io");
 

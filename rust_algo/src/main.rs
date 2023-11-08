@@ -4,11 +4,13 @@ fn main() {
     let mut line = String::new();
     stdin().read_line(&mut line).expect("wrong io");
 
-    // let temp: Vec<u128> = line
+    // let temp: Vec<usize> = line
     //     .split_whitespace()
-    //     .map(|num| num.parse::<u128>().unwrap())
+    //     .map(|num| num.parse::<usize>().unwrap())
     //     .collect();
-    let n = line.trim().parse::<usize>().unwrap();
+
+    // let n = line.trim().parse::<usize>().unwrap();
+
 
 }
 

@@ -2,8 +2,8 @@
     "tasks": [
         {
             "type": "cppbuild",
-            "label": "C/C++: g++-9 활성 파일 빌드",
-            "command": "/usr/bin/g++-9",
+            "label": "C/C++: g++-13 활성 파일 빌드",
+            "command": "/usr/bin/g++-13",
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",

@@ -3,7 +3,6 @@ use std::fmt::Write;
 
 fn main() {
     // let mut output = String::new();
-    // writeln!();
 
     // let mut line = String::new();
     // stdin().read_line(&mut line).expect("wrong io");
@@ -15,12 +14,12 @@ fn main() {
     // .map(|num| num.parse::<usize>().unwrap())
     // .collect();
 
-
+    // writeln!();
 }
 
 fn sovle(){
-
 }
+
 
 #[cfg(test)]
 mod test {

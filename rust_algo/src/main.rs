@@ -1,8 +1,9 @@
 use std::fmt::Write;
 use std::io::stdin;
+use std::collections::VecDeque;
 
 // let mut output = String::new();
-// writeln!();
+// wirteln!();
 
 // let mut line = String::new();
 // stdin().read_line(&mut line).expect("wrong io");
@@ -15,17 +16,17 @@ use std::io::stdin;
 // .collect();
 
 fn main() {
- 
+
 }
 
 fn sovle() {}
 
-#[cfg(test)]
-mod test {
-    use super::*;
+// #[cfg(test)]
+// mod test {
+//     use super::*;
 
-    #[test]
-    fn case1() {}
-    #[test]
-    fn case2() {}
-}
+//     #[test]
+//     fn case1() {}
+//     #[test]
+//     fn case2() {}
+// }

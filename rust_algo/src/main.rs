@@ -1,6 +1,6 @@
 // use std::collections::VecDeque;
-// use std::fmt::Write;
-use std::io::stdin;
+use std::fmt::Write;
+use std::{collections::HashMap, io::stdin};
 
 // let mut output = String::new();
 // wirteln!();
@@ -19,7 +19,7 @@ fn main() {
 
 }
 
-fn sovle() {}
+// fn sovle() {}
 
 //
 // ***********  알고리즘 포인트들.... ***********
@@ -43,8 +43,8 @@ fn sovle() {}
 // 애초에 그냥 vec에서 원소 넣으면 중복값 없애주면서 btree 만들어 주는
 // BTreeSet 이용해서 풀도록 하자.
 
-// 4. loop vs while ? 
-// 종료 조건이 있으면 loop 
+// 4. loop vs while ?
+// 종료 조건이 있으면 loop
 // 돌아가야 하는 조건이 있으면 while을 사용하는게 좋을 것 같다.
 
 // #[cfg(test)]

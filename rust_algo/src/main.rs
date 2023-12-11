@@ -1,7 +1,5 @@
-// use std::collections::VecDeque;
-use std::fmt::Write;
-use std::{collections::HashMap, io::stdin};
-
+use std::collections::VecDeque;
+use std::io::stdin;
 // let mut output = String::new();
 // wirteln!();
 
@@ -15,9 +13,15 @@ use std::{collections::HashMap, io::stdin};
 // .map(|num| num.parse::<usize>().unwrap())
 // .collect();
 
-fn main() {
+// #[cfg(test)]
+// mod test {
+//     #[test]
+//     fn case1() {
 
-}
+//     }
+// }
+
+fn main() {}
 
 // fn sovle() {}
 

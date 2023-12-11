@@ -21,7 +21,77 @@ use std::io::stdin;
 //     }
 // }
 
-fn main() {}
+fn main() {
+    let mut line = String::new();
+    stdin().read_line(&mut line).expect("wrong io");
+
+    let numbers: Vec<usize> = line
+        .split_whitespace()
+        .map(|num| num.parse::<usize>().unwrap())
+        .collect();
+
+    let (n, _) = (numbers[0_usize], numbers[1_usize]);
+
+    let mut res_vec: Vec<(usize, usize)> = vec![];
+
+    let mut res = 0;
+
+    let mut line = String::new();
+    stdin().read_line(&mut line).expect("wrong io");
+
+    let mut target: VecDeque<usize> = line
+        .split_whitespace()
+        .map(|num| num.parse::<usize>().unwrap())
+        .collect();
+
+    loop {
+        if res_vec.len() == n {
+            break;
+        }
+        res_vec.push((*target.front().unwrap(), 0));
+        target.pop_front();
+
+        res_vec.dedup();
+    }
+
+    loop {
+        if target.is_empty() {
+            break;
+        }
+
+        res_vec.sort_by(|a, b| a.0.cmp(&b.0));
+
+        if res_vec
+            .binary_search_by_key(target.front().unwrap(), |x| x.0)
+            .is_ok()
+        {
+            target.pop_front();
+        }
+        else {
+            for item in &mut target {
+                for res in &mut res_vec {
+                    if res.0 == *item {
+                        res.1 += 1;
+                    }
+                }
+            }
+
+            res_vec.sort_by(|a, b| b.1.cmp(&a.1));
+            res_vec.pop();
+
+            res_vec.push((*target.front().unwrap(), 0));
+            target.pop_front();
+
+            for item in &mut res_vec {
+                item.1 = 0;
+            }
+
+            res += 1;
+        }
+    }
+
+    println!("{:?}", res);
+}
 
 // fn sovle() {}
 
